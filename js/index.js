@@ -10,6 +10,9 @@ const nav = document.querySelectorAll('nav a');
 const mainNav = document.querySelector('.main-navigation');
 const mouseLeave = document.querySelector('.intro h2');
 
+
+
+
 // 1. mouseover
 destinationDivs.forEach(function(element) {
 	element.addEventListener('mouseover', function() {
@@ -47,6 +50,7 @@ document.addEventListener('scroll', function() {
 btn.forEach(function(element) {
 	element.addEventListener('dblclick', function() {
 		alert('You only have to click once!');
+		
 	});
 });
 
@@ -81,6 +85,11 @@ mouseLeave.addEventListener('mouseleave', function() {
 nav.forEach(function(element) {
 	element.addEventListener('mouseover', function() {
 		this.style.color = 'red';
+		//Greensock animation
+		gsap.to(nav, {
+	rotate: 360,
+	duration: 2
+});
 	});
 	element.addEventListener('mouseout', function() {
 		this.style.color = 'black';
@@ -89,5 +98,6 @@ nav.forEach(function(element) {
 		event.preventDefault();
 		event.stopPropagation();
 		this.style['text-decoration'] = 'underline';
+		
 	});
 });
